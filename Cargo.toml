@@ -1,0 +1,29 @@
+[package]
+name = "sphincs-plus-cry4"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "Implementation of the SPHINCS+ post-quantum signature scheme"
+repository = "https://github.com/CRY4-Hash-Based-Signatures/SPHINCS-PLUS"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand = "0.8.5"
+sha3 = "0.10.1"
+sha2 = "0.10.2"
+hmac = "0.12.1"
+crossbeam = "0.8.1"
+blake3 = "1.3.1"
+
+rsa = { version = "0.6.1", optional = true }
+ecdsa = { version = "0.14.1", optional = true }
+k256 = { version = "0.11.0", optional = true }
+
+
+[features]
+build-binary = ["rsa", "ecdsa", "k256"]
+
+[[bin]]
+name = "benchmark"
+required-features = ["build-binary"]
