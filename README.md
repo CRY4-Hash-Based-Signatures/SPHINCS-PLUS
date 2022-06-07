@@ -2,7 +2,7 @@
 Implementation of the hash based signature scheme SPHINCS+ in Rust. SPHINCS+ is a post-quantum signature scheme, submitted to the NIST-PQ competition. 
 For more information visit: https://sphincs.org/
 
-An example of the usage of this crate:
+## Usage
 
     use sphincs_plus_cry4::{Spx, Spx128fBlakeR};
     let message = b"Hi there!";
@@ -13,3 +13,8 @@ An example of the usage of this crate:
     let sig = spx_instance.sign(message, &sk);
     spx_instance.verify(message, sig, &pk);
     
+## Benchmark
+
+To build the benchmark file run:
+
+    cargo build --features build-binary --bin benchmark
