@@ -1,6 +1,6 @@
 [package]
 name = "sphincs-plus-cry4"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 license = "MIT"
 description = "Implementation of the SPHINCS+ post-quantum signature scheme"
